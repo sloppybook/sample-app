@@ -24,4 +24,5 @@ kubectl apply -f ingress.yaml
 # 動作確認
 
 http://sample-app.lvh.me/
-![image](https://github.com/user-attachments/assets/5bd8d7c3-a661-4d6d-b74f-6402a65ea684)
+![image](https://github.com/user-attachments/assets/9b2a0724-838f-450a-ab3b-e4bcd572d72f)
+
