@@ -2,7 +2,7 @@
 
 ```shell
 kind version
-kind v0.27.0 go1.23.6 darwin/arm64
+# kind v0.27.0 go1.23.6 darwin/arm64
 ```
 
 ```shell
