@@ -1,24 +1,27 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+```shell
+kind version
+kind v0.27.0 go1.23.6 darwin/arm64
+```
 
-Things you may want to cover:
+```shell
+kind create cluster --config kind.yaml --name sample-app-cluster
+kubectl apply -k git@github.com:kubernetes/ingress-nginx.git/deploy/static/provider/kind
+```
 
-* Ruby version
+```shell
+docker build -t sample-app:v1 .
+kind load docker-image sample-app:v1 --name sample-app-cluster
+```
 
-* System dependencies
+```shell
+kubectl apply -f pod.yaml
+kubectl apply -f service.yaml
+kubectl apply -f ingress.yaml
+```
 
-* Configuration
+# 動作確認
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+http://sample-app.lvh.me/
+![image](https://github.com/user-attachments/assets/5bd8d7c3-a661-4d6d-b74f-6402a65ea684)
