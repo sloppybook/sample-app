@@ -15,10 +15,18 @@ docker build -t sample-app:v1 .
 kind load docker-image sample-app:v1 --name sample-app-cluster
 ```
 
+- deploymentを使わない場合
 ```shell
 kubectl apply -f pod.yaml
 kubectl apply -f service.yaml
 kubectl apply -f ingress.yaml
+```
+
+- deploymentを使う場合
+
+```shell
+kubectl delete -f pod.yaml
+kubectl apply -f deployment.yaml
 ```
 
 # 動作確認
